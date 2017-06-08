@@ -84,6 +84,14 @@ export default {
       let _this = this
       _this.popupLogin = false
     },
+    // 消失showM
+    checkshowM () {
+      if (this.showM === true) {
+        setTimeout(function () {
+          this.showM = false
+        }, 2000)
+      }
+    },
     openReminded () {
       let _this = this
       setInterval(function () {
@@ -104,6 +112,7 @@ export default {
         } else {
           return false
         }
+        _this.checkshowM()
       }, 0.1)
     }
   }

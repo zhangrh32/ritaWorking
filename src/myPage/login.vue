@@ -49,7 +49,7 @@ export default {
     Login () {
       if (apiAddress.checkSlider && this.form.phone && this.form.pwd ) {
         // let md5 = require('md5')
-        this.$router.push('/index')
+        this.$router.push('/one')
       } else {
         alert('请将信息填写完整')
       }
