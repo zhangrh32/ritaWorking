@@ -12,7 +12,9 @@
 </template>
 <script>
 import list from '@/component/list.vue'
-import alert from '@/component/alert.vue'
+import alert from '@/component/alert.js'
+import Vue from 'vue'
+Vue.prototype.$Message = alert
 export default {
   data () {
     return {
@@ -28,9 +30,10 @@ export default {
       setTimeout(function () {
         _this.showM = false
       }, 2000)
+      _this.$Message('000')
     }
   },
-  components: {'r-list': list, 'r-alert': alert}
+  components: {'r-list': list}
 }
 </script>
 
