@@ -9,6 +9,7 @@ import remberMe from '@/myPage/componentsPage/remberMe.vue' // 一个提醒的�
 import list from '@/myPage/myself/list.vue' // 练习
 import myself from '@/myPage/myself/index.vue' // 练习
 import data from '@/myPage/myself/data.vue' // 日历
+import label from '@/myPage/myself/label.vue' // 标签
 
 Vue.use(Router)
 
@@ -49,6 +50,9 @@ export default new Router({
       }, {
         path: '/data',
         component: data
+      }, {
+        path: '/label',
+        component: label
       }]
     }]
 })
