@@ -10,6 +10,8 @@ import list from '@/myPage/myself/list.vue' // 练习
 import myself from '@/myPage/myself/index.vue' // 练习
 import data from '@/myPage/myself/data.vue' // 日历
 import label from '@/myPage/myself/label.vue' // 标签
+import compont from '@/myPage/ritaComponents/index.vue' // 组件库
+import alert from '@/myPage/ritaComponents/alert.vue' // 组件库
 
 Vue.use(Router)
 
@@ -53,6 +55,16 @@ export default new Router({
       }, {
         path: '/label',
         component: label
+      }]
+    }, {
+      path: '/compont',
+      component: compont,
+      children: [{
+        path: '',
+        redirect: 'alert'
+      }, {
+        path: 'alert',
+        component: alert
       }]
     }]
 })

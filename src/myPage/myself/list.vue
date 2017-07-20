@@ -1,18 +1,22 @@
 <template>
   <div>
     {{ title }}
-    <r-list num="1"></r-list>
-    <r-list num="4"></r-list>
-    <r-list num="7"></r-list>
-    <r-list num="10"></r-list>
-    <r-list num="13"></r-list>
+    <div>
+      <h1>我是父组件的标题</h1>
+      <my-component>
+         <h1 slot="header">这里可能是一个页面标题</h1>
+          <p>主要内容的一个段落。</p>
+          <p>另一个主要段落。</p>
+          <p slot="footer">这里有一些联系信息</p>
+      </my-component>
+    </div>
     <button @click="showmessage">点我</button>
     <r-alert v-show="showM===true" message="hhhhhhhhh"></r-alert>
   </div>
 </template>
 <script>
-import list from '@/component/list.vue'
-import alert from '@/component/alert.js'
+// import list from '@/component/list.vue'
+// import alert from '@/component/alert.js'
 import Vue from 'vue'
 Vue.prototype.$Message = alert
 export default {
@@ -32,8 +36,8 @@ export default {
       }, 2000)
       _this.$Message('000')
     }
-  },
-  components: {'r-list': list}
+  }
+  // components: {'my-component': list}
 }
 </script>
 
